@@ -3,7 +3,7 @@ const fs = require('fs');
 var words = [];
 
 var boringWords = [
-    "A", "a", "I", "the", "The", "You", "you", "I'm", "and", "in", "of", "on", "to", "And", "it", "for", "be", "your", "but", "my", "we", "that", "is", "this"
+    "A", "a", "I", "the", "The", "You", "you", "I'm", "and", "in", "of", "on", "to", "And", "it", "for", "be", "your", "but", "my", "we", "that", "is", "this", "you're" 
 ];
 
 function readFile(f, cloud) {
@@ -100,8 +100,8 @@ function convertCloud(cloud) {
 }
 
 var files = getFiles([
-  'Act1'
-  //, 'Act2'
+  'Act1',
+  'Act2'
 ]);
 
 cloud = {};
