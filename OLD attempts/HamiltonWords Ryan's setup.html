@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>Hamilton Words</title>
+	<meta charset="UTF-8">
+	<meta name="description" content='Breakdown of the lyrics of the musical "Hamilton" by Lin Manuel Miranda.'>
+	<meta name="keywords" content="Mildly interesting, Alexander, Hamilton, Lin, Manuel, Miranda, Weirdly specific keyword that does not pertain to the content, data, personal project that probably will never actually be indexed by google, actually, now that I think of it, that's probably not true.">
+	<meta name="author" content="Ryan Norman">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.1.1.js"></script>
+	<script src="jQCloud-master/dist/jqcloud.min.js"></script>
+	<link rel="stylesheet" href="jQCloud-master/dist/jqcloud.css">
+    <style>
+	span.words {
+	}
+	</style>
+</head>
+
+<!--Colors used should be HEX
+
+#f1e60d Yellow
+#1d203d Dark blue
+#2535d6 Blue
+#5dd625 Green
+#d62525 Red
+#bedefa Light blue
+-->
+
+<body style="background-color:#ffffff;">
+    <div id="cloud" style="width: 350px; height: 250px;"></div>
+
+<script type="text/javascript">
+
+function readTextFile(file)
+{
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", file, true);
+    rawFile.onreadystatechange = function ()
+    {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status == 0)
+            {
+                var allText = rawFile.responseText;
+                alert(allText);
+            }
+        }
+    }
+    rawFile.send(null);
+    
+    
+    words = {
+        Alexander: 543,
+        does
+        
+    }
+    
+    var word = readWordFromFile();
+    if (!words.hasOwnProperty(word)) {
+        words[word] = 0;
+    }
+    words[word]++;
+    
+    function covertWordsToCloud(words) {
+        var results = [];
+        for (var word in words) {
+            var weight = words[word];
+            results.push({
+                text: word,
+                weight: weight
+            }); 
+            
+        }
+        return results;
+    }
+    
+    var words2 = convertWordsToCloud(words);
+    
+    $(document).ready(function(){
+        $('#cloud').jQCloud(words2);
+    });
+    
+}
+
+readTextFile("file:///C:\Users\Carth\Google Drive\Hamilton words\Act1\01Alexander Hamilton")
+
+//var words2 = [
+//	{text: "Alexander", weight: 13},
+//	{text: "How", weight: 2},
+//	{text: "does", weight: 2},
+//	{text: "a", weight: 5},
+//	{text: "bastard", weight: 4},
+//	{text: "orphan", weight: 3},
+//	{text: "son", weight: 6},
+//	{text: "of", weight: 3},
+//	{text: "whore", weight: 8},
+//	{text: "and", weight: 6},
+//	{text: "scotsman", weight: 1}
+//];
+//
+//$(document).ready(function(){
+//    $('#cloud').jQCloud(words2);
+//});
+</script>
+
+<noscript>Woops! this really isn't gonna work if you don't have javascript support! Sorry!</noscript>
+
+</body>
+</html>
