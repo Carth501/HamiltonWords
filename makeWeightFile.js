@@ -3,7 +3,7 @@ const fs = require('fs');
 var words = [];
 
 var boringWords = [
-    "A", "a", "I", "the", "The", "You", "you", "I'm", "and", "in", "of", "on", "to", "And", "it", "for", "be", "your", "but", "my", "we"
+    "A", "a", "I", "the", "The", "You", "you", "I'm", "and", "in", "of", "on", "to", "And", "it", "for", "be", "your", "but", "my", "we", "that", "is", "this"
 ];
 
 function readFile(f, cloud) {
@@ -60,7 +60,7 @@ function readFile(f, cloud) {
                 if (!cloud.hasOwnProperty(w)) {
                     cloud[w] = 0;
                 }
-                cloud[w]++;    
+                cloud[w] += w.length;    
             }
         })
     
