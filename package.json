@@ -18,6 +18,8 @@
   "homepage": "https://github.com/Carth501/HamiltonWords#readme",
   "dependencies": {
     "angular": "^1.6.1",
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "mongodb": "^2.2.22",
+    "mongoskin": "^2.1.0"
   }
 }
