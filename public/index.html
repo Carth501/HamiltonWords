@@ -81,5 +81,15 @@
         </form>
     </div>
     
-    <div id="cloud" style="width: 100%; height:500px; float:left;"></div>
+    <div id="cloud" style="width: 100%; height:1500px; float:left;"></div>
+    
+    <script>
+        
+    $('#cloud').jQCloud([], {
+        shape: 'rectangular', 
+        autoResize: true,
+        steps: 10,
+        delay: 0
+    });
+    </script>
 </body>    

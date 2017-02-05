@@ -103,17 +103,18 @@ app.controller('FormCtrl', function ($scope, $http) {
             } 
         });
         
+        if (songs.length === 0) {
+            return;
+        }
+        
         var params = {
             songs: songs.join(',')
         }
         
         $http.get('/getCloud', { params: params }).then(function(response){
-            $('#cloud').jQCloud(response.data, {
-                shape: 'rectangular', 
-                autoResize: true,
-                steps: 10,
-                delay: 1
-            });
+            
+            
+            $('#cloud').jQCloud('update', response.data);
         });
     }
  });
