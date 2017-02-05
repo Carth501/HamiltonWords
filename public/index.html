@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>Hamilton Words</title>
+	<meta charset="UTF-8">
+	<meta name="description" content='Breakdown of the lyrics of the musical "Hamilton" by Lin Manuel Miranda.'>
+	<meta name="keywords" content="Mildly interesting, Alexander, Hamilton, Lin, Manuel, Miranda, Weirdly specific keyword that does not pertain to the content, data, personal project that probably will never actually be indexed by google, actually, now that I think of it, that's probably not true.">
+	<meta name="author" content="Ryan Norman">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.1.1.js"></script>
+	<script src="jQCloud-master/dist/jqcloud.min.js"></script>
+    <script src="angular.min.js"></script>
+    
+    <script src="words.js"></script>
+
+    
+	<link rel="stylesheet" href="resources/css/app.css">
+	<link rel="stylesheet" href="jQCloud-master/dist/jqcloud.css">
+    <style>
+	span.words {
+	}
+	</style>
+</head>
+
+<!--Colors used should be HEX
+
+#f1e60d Yellow
+#1d203d Dark blue
+#2535d6 Blue
+#5dd625 Green
+#d62525 Red
+#bedefa Light blue
+-->
+
+<body style="background-color:#ffffff;">
+    <div ng-app="myApp" style="float:left;">
+        <form name="saveTemplateData" ng-controller="FormCtrl">
+
+            <div style="float:left">
+                <input
+                    type="checkbox"
+                    name="act1"
+                    value="act1"
+                    ng-model="act1isChecked"
+                    ng-click="toggleAct1(key)"
+                  >Act1<br/>
+                
+                <div style="padding-left:40px;">
+                    <label ng-repeat="key in act1songlist">
+                      <input
+                        type="checkbox"
+                        value="{{key}}"
+                        ng-model="checkboxes[key]"
+                      > {{act1songs[key]}}<br/>
+                    </label>
+                </div>
+            </div>
+
+            <div style="float:left">
+                <input
+                    type="checkbox"
+                    name="act2"
+                    value="act2"
+                    ng-model="act2isChecked"
+                    ng-click="toggleAct2(key)"
+                  >Act2<br/>
+                
+                <div style="padding-left:40px;">        
+                    <label ng-repeat="key in act2songlist">
+                      <input
+                        type="checkbox"
+                        value="{{key}}"
+                        ng-model="checkboxes[key]"
+                      > {{act2songs[key]}}<br/>
+                    </label>
+                </div>
+            </div>
+            <div style="clear:both;"></div>
+            <br/>
+            <input type="submit" ng-click="update()">
+        </form>
+    </div>
+    
+    <div id="cloud" style="width: 100%; height:500px; float:left;"></div>
+</body>    

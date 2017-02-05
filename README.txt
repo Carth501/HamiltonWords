@@ -1,0 +1,1 @@
+As of Feb 3, 2017, the Anonymous share directory on Idle is /samba2

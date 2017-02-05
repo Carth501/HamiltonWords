@@ -137,7 +137,12 @@ var data = "[{\"text\":\"1776\",\"weight\":4},{\"text\":\"1780\",\"weight\":4},{
     var wordsPrepared = JSON.parse(data);
     
     $(document).ready(function(){
-        $('#cloud').jQCloud(wordsPrepared, {shape: 'rectangular', autoResize: true});
+        $('#cloud').jQCloud(wordsPrepared, {
+            shape: 'rectangular', 
+            autoResize: true,
+            steps: 10,
+            delay: 1
+        });
     });
     
     function reloadCloud()
